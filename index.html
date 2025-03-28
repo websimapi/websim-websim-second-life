@@ -1,0 +1,71 @@
+<html>
+<head>
+  <title>Websim Second Life</title>
+  <style>
+    body { margin: 0; overflow: hidden; background-color: #f0f0f0; }
+    #container { width: 100%; height: 100vh; }
+    #upload-panel {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: rgba(255, 255, 255, 0.8);
+      padding: 10px;
+      border-radius: 5px;
+      z-index: 10;
+    }
+    #asset-library {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: rgba(255, 255, 255, 0.8);
+      padding: 10px;
+      border-radius: 5px;
+      z-index: 10;
+      max-height: 80vh;
+      overflow-y: auto;
+    }
+    #asset-library img {
+      width: 50px;
+      height: 50px;
+      margin: 5px;
+      cursor: pointer;
+      border: 1px solid #ccc;
+    }
+     #asset-library .asset-item {
+       display: flex;
+       align-items: center;
+       margin-bottom: 5px;
+     }
+     #asset-library button {
+       margin-left: 10px;
+     }
+  </style>
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+        "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/",
+        "websim": "/websim.js"
+      }
+    }
+  </script>
+</head>
+<body>
+  <div id="container"></div>
+  <div id="upload-panel">
+    <label for="asset-upload">Upload Asset (GLB):</label>
+    <input type="file" id="asset-upload" accept=".glb">
+    <button id="upload-button">Upload</button>
+    <br><br>
+    <label for="avatar-upload">Upload Avatar (GLB):</label>
+    <input type="file" id="avatar-upload" accept=".glb">
+    <button id="upload-avatar-button">Upload Avatar</button>
+  </div>
+  <div id="asset-library">
+    <h3>Asset Library</h3>
+    <div id="library-content"></div>
+  </div>
+  <script type="module" src="main.js"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"4c6229722a6346bc8eb5cb0e5eae5d41","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>
